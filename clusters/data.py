@@ -323,8 +323,9 @@ class Catalogs(object):
         calexp = self._load_catalog_dataid(
             calcat, self.dataids[calcat][0], table=False)
         print("INFO: Getting the magnitude function")
-        calib = calexp.getCalib()
-        calib.setThrowOnNegativeFlux(False)
+        calib = calexp.getPhotoCalib()
+        #        calib = calexp.getCalib()
+        #calib.setThrowOnNegativeFlux(False)
         self.from_butler['getmag'] = calib.getMagnitude
         print("INFO: Getting the wcs function")
         wcs = calexp.getWcs().getFitsMetadata().toDict()
