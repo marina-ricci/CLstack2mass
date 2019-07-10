@@ -4,7 +4,7 @@
 from __future__ import print_function
 import os
 import gc
-import warnings 
+import warnings
 import numpy as np
 import h5py
 import fitsio
@@ -430,7 +430,7 @@ class Catalogs(object):
                 self.catalogs.pop(cat)
                 self.catalogs[cat] = Table([oid]).copy()
             self.append = True
-        print("INFO: Saving done!")
+        print("INFO: Saving done.")
         # Clean memory before loading a new catalog
         # gc.collect()
 

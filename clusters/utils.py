@@ -159,14 +159,14 @@ def filter_table(cats):
     filt &= cats['deepCoadd_meas']['detect_isPrimary'] == 1
 
     # Check the flux value, which must be > 0
-    filt &= cats['deepCoadd_forced_src']['modelfit_CModel_instFlux'] > 0
+    filt &= cats['deepCoadd_forced_src']['modelfit_CModel_flux'] > 0
 
     # Select sources which have a proper flux value
     filt &= cats['deepCoadd_forced_src']['modelfit_CModel_flag'] == 0
 
     # Check the signal to noise (stn) value, which must be > 10
-    filt &= (cats['deepCoadd_forced_src']['modelfit_CModel_instFlux'] /
-             cats['deepCoadd_forced_src']['modelfit_CModel_instFluxErr']) > 10
+    filt &= (cats['deepCoadd_forced_src']['modelfit_CModel_flux'] /
+             cats['deepCoadd_forced_src']['modelfit_CModel_fluxSigma']) > 10
 
     # == Only keeps sources with the 'nfilt' filters
     dmg = cats['deepCoadd_meas'][filt].group_by('id')
