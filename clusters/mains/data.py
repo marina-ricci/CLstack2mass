@@ -34,6 +34,9 @@ def load_data(argv=None):
                         help="Overwrite the output files if they exist already")
     parser.add_argument("--show", action="store_true", default=False,
                         help="Show and save the list of available keys in the catalogs, and exit.")
+    parser.add_argument("--MT", action="store_true", default=False,
+                        help="Enables multithreading for loading the catalogs.")
+
     args = parser.parse_args(argv)
 
     config = cutils.load_config(args.config)
@@ -57,6 +60,8 @@ def load_data(argv=None):
               (config['cluster'], config['redshift']))
     if 'filter' in config:
         print("  - filters", config['filter'])
+    if 'tract' in config:
+        print("  - tracts", config['tract'])
     if 'patch' in config:
         print("  - patches", config['patch'])
     print("INFO: Butler located under %s" % config['butler'])
@@ -73,6 +78,7 @@ def load_data(argv=None):
         return
     config['output_name'] = output
     config['overwrite'] = args.overwrite
+    config['MT'] = args.MT
     data.load_catalogs(args.catalogs.split(','), matchid=True, **config)
 
     # Apply filter
@@ -87,4 +93,5 @@ def apply_filter(hdf5file, config, output, overwrite):
 #    data = cdata.Catalogs(config['butler'], load_butler=False)
     data = cdata.DRPCatalogs(config['butler'])
     data.catalogs = cutils.filter_table(catalogs)
-    data.save_catalogs(output, overwrite=overwrite, delete_catalog=True)
+#    data.save_catalogs(output, overwrite=overwrite, delete_catalog=True)
+    data.save_catalogs(output, overwrite=overwrite, delete_catalog=False)

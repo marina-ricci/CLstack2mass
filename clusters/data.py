@@ -35,7 +35,7 @@ class DRPLoader(object):
         self.butler = dafPersist.Butler(self.drp_path)
         self.mapper = self.butler._getDefaultMapper()
         self.repoData = self.butler._repos.outputs()[0]
-
+        
         # Load some basic info on the current DRP
         self.repo_input = self._get_repo("input")    # repo containing the raw data after ingestion
         self.repo_output = self._get_repo("output")  # repo containing the processed data
@@ -735,6 +735,7 @@ class DRPCatalogs(DRPLoader):
             output_name += '.hdf5'
         print(colored("\nINFO: Saving the catalogs in %s" % output_name, "green"))
         catalogs = [catalog] if catalog is not None else self.catalogs
+        
         for cat in catalogs:
             print("  - saving", cat)
             for k in self.catalogs[cat].keys():
