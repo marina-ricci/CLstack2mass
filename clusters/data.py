@@ -755,7 +755,8 @@ class DRPCatalogs(DRPLoader):
                 self.catalogs[cat] = Table([oid]).copy()
             self.append = True
         print("INFO: Saving done.")
-
+        # Clean memory before loading a new catalog
+        # gc.collect()
 
 
 class QservNameConverter(object):
