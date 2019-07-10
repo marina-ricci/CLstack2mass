@@ -66,8 +66,8 @@ def load_data(argv=None):
         apply_filter(args.filter, config, output_filtered, args.overwrite)
         sys.exit()
 
-    data = cdata.Catalogs(config['butler'])
-
+#    data = cdata.Catalogs(config['butler'])
+    data = cdata.DRPCatalogs(config['butler'])
     if args.show:
         data.show_keys(args.catalogs.split(','))
         return
@@ -84,6 +84,7 @@ def apply_filter(hdf5file, config, output, overwrite):
     """Apply quality cuts and only keep the galaxies."""
     print("\nINFO: Applying filters on the data to keep a clean sample of galaxies")
     catalogs = cutils.read_hdf5(hdf5file)
-    data = cdata.Catalogs(config['butler'], load_butler=False)
+#    data = cdata.Catalogs(config['butler'], load_butler=False)
+    data = cdata.DRPCatalogs(config['butler'])
     data.catalogs = cutils.filter_table(catalogs)
     data.save_catalogs(output, overwrite=overwrite, delete_catalog=True)

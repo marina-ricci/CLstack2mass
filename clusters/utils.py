@@ -351,3 +351,8 @@ def overwrite_or_append(filename, path, table, overwrite=False):
             print("Adding", path, " to", filename)
             table.write(filename, path=path, compression=True, serialize_meta=True,
                         append=True)
+
+def shorten(doc):
+    """Hack to go around an astropy/hdf5 bug. Cut in half words longer than 18 chars."""
+    return " ".join([w if len(w) < 18 else (w[:int(len(w) / 2)] + ' - ' + w[int(len(w) / 2):])
+                     for w in doc.split()])
