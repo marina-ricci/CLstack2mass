@@ -111,7 +111,7 @@ def photometric_redshift(argv=None):
             if zcode == 'bpz':  # Run BPZ
                 zphot = czphot.BPZ([data[args.mag][data['filter'] == f] for f in kwargs['filters']],
                                    [data[args.mag.replace("_extcorr", "") +
-                                         "Sigma"][data['filter'] == f]
+                                         "Err"][data['filter'] == f]
                                     for f in kwargs['filters']],
                                    zpara=zpara, spectro_file=spectro_file, **kwargs)
 
@@ -119,7 +119,7 @@ def photometric_redshift(argv=None):
                 zphot = czphot.LEPHARE([data[args.mag][data['filter'] == f]
                                         for f in kwargs['filters']],
                                        [data[args.mag.replace("_extcorr", "") +
-                                             "Sigma"][data['filter'] == f]
+                                             "Err"][data['filter'] == f]
                                         for f in kwargs['filters']],
                                        zpara=zpara, spectro_file=spectro_file, **kwargs)
                 zphot.check_config()
