@@ -532,12 +532,12 @@ class DRPCatalogs(DRPLoader):
             # Add magnitudes
             if self.from_butler['getmag'] is not None:
                 kfluxes = [
-                    k for k in self.catalogs[catalog].columns if k.endswith('_flux')]
-                ksigmas = [k + 'Sigma' for k in kfluxes]
+                    k for k in self.catalogs[catalog].columns if k.endswith('_instFlux')]
+                ksigmas = [k + 'Err' for k in kfluxes]
                 print("    -> getting magnitudes")
 
                 for kflux, ksigma in zip(kfluxes, ksigmas):
-                    if kflux.replace('_flux', '_mag') in self.catalogs[catalog].keys():
+                    if kflux.replace('_instFlux', '_mag') in self.catalogs[catalog].keys():
                         continue
 
                     if ksigma in self.catalogs[catalog].keys():
@@ -546,13 +546,13 @@ class DRPCatalogs(DRPLoader):
                                                                numpy.array(self.catalogs[catalog][ksigma],
                                                                         dtype='float'))
 
-                        print("-> new param : magnitudes : ",catalog," add param ",kflux.replace('_flux', '_mag'))
-                        print("-> new param : magnitudes : ",catalog," add param ",ksigma.replace('_flux', '_mag'))
+                        print("-> new param : magnitudes : ",catalog," add param ",kflux.replace('_instFlux', '_mag'))
+                        print("-> new param : magnitudes : ",catalog," add param ",ksigma.replace('_instFlux', '_mag'))
 
-                        columns.append(Column(name=kflux.replace('_flux', '_mag'),
+                        columns.append(Column(name=kflux.replace('_instFlux', '_mag'),
                                           data=mag, description='Magnitude', unit='mag'))
                    
-                        columns.append(Column(name=ksigma.replace('_fluxSigma', '_magSigma'),
+                        columns.append(Column(name=ksigma.replace('_instFluxErr', '_magErr'),
                                           data=dmag, description='Magnitude error', unit='mag'))
             if 'x_Src' in self.catalogs[catalog].keys():
                 return
@@ -603,6 +603,7 @@ class DRPCatalogs(DRPLoader):
 #        calib = calexp.getCalib()
 #        calib.setThrowOnNegativeFlux(False)
         self.from_butler['getmag'] = calib.getMagnitude
+#        self.from_butler['getmag'] = calib.instFluxToMagnitude
         print("INFO: Getting the wcs function")
         wcs = calexp.getWcs().getFitsMetadata().toDict()
         self.from_butler['wcs'] = WCS(wcs)
