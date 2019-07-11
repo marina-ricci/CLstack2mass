@@ -181,7 +181,8 @@ def compute_shear(cat, center, raCol, decCol, g1Col, g2Col):
 #   These angles are only unsed in cos(2phi) and sin(2phi), so that the difference above does not matter
 
     coord_cl = coord.SkyCoord(cluster_ra * u.deg, cluster_dec * u.deg)
-    coord_gal = coord.SkyCoord(ra * u.deg, dec * u.deg)
+#    coord_gal = coord.SkyCoord(ra * u.deg, dec * u.deg)
+    coord_gal = coord.SkyCoord(ra, dec)
 
     posangle = -((np.pi / 2.) - coord_gal.position_angle(coord_cl).rad)
 
