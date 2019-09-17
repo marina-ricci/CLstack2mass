@@ -1,0 +1,60 @@
+## Installed with : 
+### `python setup.py develop --user`
+### output : 
+
+running develop
+running egg_info
+creating clusters.egg-info
+writing clusters.egg-info/PKG-INFO
+writing dependency_links to clusters.egg-info/dependency_links.txt
+writing top-level names to clusters.egg-info/top_level.txt
+writing manifest file 'clusters.egg-info/SOURCES.txt'
+reading manifest file 'clusters.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+warning: no files found matching 'README.md'
+writing manifest file 'clusters.egg-info/SOURCES.txt'
+running build_ext
+building 'pzmassfitter.nfwmodeltools' extension
+creating build
+creating build/temp.linux-x86_64-3.7
+creating build/temp.linux-x86_64-3.7/pzmassfitter
+gcc -pthread -B /pbs/throng/lsst/software/desc/anaconda3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -Ipzmassfitter -I/pbs/throng/lsst/software/desc/anaconda3/lib/python3.7/site-packages/numpy/core/include -I/pbs/throng/lsst/software/desc/anaconda3/include/python3.7m -c pzmassfitter/nfwmodeltools.c -o build/temp.linux-x86_64-3.7/pzmassfitter/nfwmodeltools.o
+In file included from /pbs/throng/lsst/software/desc/anaconda3/lib/python3.7/site-packages/numpy/core/include/numpy/ndarraytypes.h:1823:0,
+                 from /pbs/throng/lsst/software/desc/anaconda3/lib/python3.7/site-packages/numpy/core/include/numpy/ndarrayobject.h:18,
+                 from /pbs/throng/lsst/software/desc/anaconda3/lib/python3.7/site-packages/numpy/core/include/numpy/arrayobject.h:4,
+                 from pzmassfitter/nfwmodeltools.c:635:
+/pbs/throng/lsst/software/desc/anaconda3/lib/python3.7/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h:15:2: warning: #warning "Using deprecated NumPy API, disable it by " "#defining NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION" [-Wcpp]
+ #warning "Using deprecated NumPy API, disable it by " \
+  ^
+gcc -pthread -B /pbs/throng/lsst/software/desc/anaconda3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -Ipzmassfitter -I/pbs/throng/lsst/software/desc/anaconda3/lib/python3.7/site-packages/numpy/core/include -I/pbs/throng/lsst/software/desc/anaconda3/include/python3.7m -c pzmassfitter/voigt.c -o build/temp.linux-x86_64-3.7/pzmassfitter/voigt.o
+creating build/lib.linux-x86_64-3.7
+creating build/lib.linux-x86_64-3.7/pzmassfitter
+gcc -pthread -shared -B /pbs/throng/lsst/software/desc/anaconda3/compiler_compat -L/pbs/throng/lsst/software/desc/anaconda3/lib -Wl,-rpath=/pbs/throng/lsst/software/desc/anaconda3/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-x86_64-3.7/pzmassfitter/nfwmodeltools.o build/temp.linux-x86_64-3.7/pzmassfitter/voigt.o -o build/lib.linux-x86_64-3.7/pzmassfitter/nfwmodeltools.cpython-37m-x86_64-linux-gnu.so
+building 'pzmassfitter.voigtcall' extension
+gcc -pthread -B /pbs/throng/lsst/software/desc/anaconda3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -Ipzmassfitter -I/pbs/throng/lsst/software/desc/anaconda3/lib/python3.7/site-packages/numpy/core/include -I/pbs/throng/lsst/software/desc/anaconda3/include/python3.7m -c pzmassfitter/voigtcall.c -o build/temp.linux-x86_64-3.7/pzmassfitter/voigtcall.o
+In file included from /pbs/throng/lsst/software/desc/anaconda3/lib/python3.7/site-packages/numpy/core/include/numpy/ndarraytypes.h:1823:0,
+                 from /pbs/throng/lsst/software/desc/anaconda3/lib/python3.7/site-packages/numpy/core/include/numpy/ndarrayobject.h:18,
+                 from /pbs/throng/lsst/software/desc/anaconda3/lib/python3.7/site-packages/numpy/core/include/numpy/arrayobject.h:4,
+                 from pzmassfitter/voigtcall.c:635:
+/pbs/throng/lsst/software/desc/anaconda3/lib/python3.7/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h:15:2: warning: #warning "Using deprecated NumPy API, disable it by " "#defining NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION" [-Wcpp]
+ #warning "Using deprecated NumPy API, disable it by " \
+  ^
+gcc -pthread -B /pbs/throng/lsst/software/desc/anaconda3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -Ipzmassfitter -I/pbs/throng/lsst/software/desc/anaconda3/lib/python3.7/site-packages/numpy/core/include -I/pbs/throng/lsst/software/desc/anaconda3/include/python3.7m -c pzmassfitter/voigt.c -o build/temp.linux-x86_64-3.7/pzmassfitter/voigt.o
+gcc -pthread -shared -B /pbs/throng/lsst/software/desc/anaconda3/compiler_compat -L/pbs/throng/lsst/software/desc/anaconda3/lib -Wl,-rpath=/pbs/throng/lsst/software/desc/anaconda3/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-x86_64-3.7/pzmassfitter/voigtcall.o build/temp.linux-x86_64-3.7/pzmassfitter/voigt.o -o build/lib.linux-x86_64-3.7/pzmassfitter/voigtcall.cpython-37m-x86_64-linux-gnu.so
+copying build/lib.linux-x86_64-3.7/pzmassfitter/nfwmodeltools.cpython-37m-x86_64-linux-gnu.so -> pzmassfitter
+copying build/lib.linux-x86_64-3.7/pzmassfitter/voigtcall.cpython-37m-x86_64-linux-gnu.so -> pzmassfitter
+Creating /pbs/home/m/mricci/.local/lib/python3.7/site-packages/clusters.egg-link (link to .)
+Adding clusters 0.1.1 to easy-install.pth file
+Installing clusters_extinction.py script to /pbs/home/m/mricci/.local/bin
+Installing clusters_getbackground.py script to /pbs/home/m/mricci/.local/bin
+Installing clusters_zphot.py script to /pbs/home/m/mricci/.local/bin
+Installing clusters_import_wtgcat.py script to /pbs/home/m/mricci/.local/bin
+Installing clusters_import_simcat.py script to /pbs/home/m/mricci/.local/bin
+Installing clusters_pipeline.py script to /pbs/home/m/mricci/.local/bin
+Installing clusters_data.py script to /pbs/home/m/mricci/.local/bin
+Installing clusters_shear.py script to /pbs/home/m/mricci/.local/bin
+Installing clusters_mass.py script to /pbs/home/m/mricci/.local/bin
+
+Installed /pbs/throng/lsst/users/mricci/reprocessing/CLstack2mass
+Processing dependencies for clusters==0.1.1
+Finished processing dependencies for clusters==0.1.1
