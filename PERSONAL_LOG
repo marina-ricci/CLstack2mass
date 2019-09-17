@@ -58,3 +58,81 @@ Installing clusters_mass.py script to /pbs/home/m/mricci/.local/bin
 Installed /pbs/throng/lsst/users/mricci/reprocessing/CLstack2mass
 Processing dependencies for clusters==0.1.1
 Finished processing dependencies for clusters==0.1.1
+
+## Requirements installation
+### pip install --user -r requirements.txt
+### outuput 
+Requirement already satisfied: numpy in /pbs/throng/lsst/software/desc/anaconda3/lib/python3.7/site-packages (from -r requirements.txt (line 1)) (1.15.4)
+Requirement already satisfied: scipy in /pbs/throng/lsst/software/desc/anaconda3/lib/python3.7/site-packages (from -r requirements.txt (line 2)) (1.1.0)
+Requirement already satisfied: matplotlib in /pbs/throng/lsst/software/desc/anaconda3/lib/python3.7/site-packages (from -r requirements.txt (line 3)) (3.0.2)
+Requirement already satisfied: seaborn in /pbs/throng/lsst/software/desc/anaconda3/lib/python3.7/site-packages (from -r requirements.txt (line 4)) (0.9.0)
+Requirement already satisfied: pyyaml in /pbs/throng/lsst/software/desc/anaconda3/lib/python3.7/site-packages (from -r requirements.txt (line 5)) (3.13)
+Requirement already satisfied: astropy in /pbs/throng/lsst/software/desc/anaconda3/lib/python3.7/site-packages (from -r requirements.txt (line 6)) (3.1)
+Requirement already satisfied: requests in /pbs/throng/lsst/software/desc/anaconda3/lib/python3.7/site-packages (from -r requirements.txt (line 7)) (2.21.0)
+Requirement already satisfied: h5py in /pbs/throng/lsst/software/desc/anaconda3/lib/python3.7/site-packages (from -r requirements.txt (line 8)) (2.8.0)
+Collecting progressbar2 (from -r requirements.txt (line 9))
+  Downloading https://files.pythonhosted.org/packages/a3/72/1e88c46edd372d46f989db9b0168951b080a83666b6820bb8159a3d62280/progressbar2-3.43.1-py2.py3-none-any.whl
+Collecting termcolor (from -r requirements.txt (line 10))
+  Downloading https://files.pythonhosted.org/packages/8a/48/a76be51647d0eb9f10e2a4511bf3ffb8cc1e6b14e9e4fab46173aa79f981/termcolor-1.1.0.tar.gz
+Collecting fitsio (from -r requirements.txt (line 11))
+  Downloading https://files.pythonhosted.org/packages/87/c1/be76515a52004b261febf2c2074f0c2fd730b71b331e2cc69480952e1ed3/fitsio-1.0.5.tar.gz (4.8MB)
+    100% |████████████████████████████████| 4.8MB 1.4MB/s 
+Requirement already satisfied: cython in /pbs/throng/lsst/software/desc/anaconda3/lib/python3.7/site-packages (from -r requirements.txt (line 12)) (0.29.2)
+Collecting pymc (from -r requirements.txt (line 13))
+  Downloading https://files.pythonhosted.org/packages/0c/1c/2eb7016284e04ccf401fdcf11b817b160629cf8cf230240ceb348311ac2e/pymc-2.3.6.tar.gz (348kB)
+    100% |████████████████████████████████| 358kB 2.5MB/s 
+Requirement already satisfied: pytest in /pbs/throng/lsst/software/desc/anaconda3/lib/python3.7/site-packages (from -r requirements.txt (line 14)) (4.0.2)
+Collecting extinctions (from -r requirements.txt (line 15))
+  Downloading https://files.pythonhosted.org/packages/fc/d5/45cc83a055084adb51e072d9b1fee0f36f3f9921ed28c75f4292926c70d0/extinctions-0.1.11.tar.gz
+Requirement already satisfied: cycler>=0.10 in /pbs/throng/lsst/software/desc/anaconda3/lib/python3.7/site-packages (from matplotlib->-r requirements.txt (line 3)) (0.10.0)
+Requirement already satisfied: kiwisolver>=1.0.1 in /pbs/throng/lsst/software/desc/anaconda3/lib/python3.7/site-packages (from matplotlib->-r requirements.txt (line 3)) (1.0.1)
+Requirement already satisfied: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,>=2.0.1 in /pbs/throng/lsst/software/desc/anaconda3/lib/python3.7/site-packages (from matplotlib->-r requirements.txt (line 3)) (2.3.0)
+Requirement already satisfied: python-dateutil>=2.1 in /pbs/throng/lsst/software/desc/anaconda3/lib/python3.7/site-packages (from matplotlib->-r requirements.txt (line 3)) (2.7.5)
+Requirement already satisfied: pandas>=0.15.2 in /pbs/throng/lsst/software/desc/anaconda3/lib/python3.7/site-packages (from seaborn->-r requirements.txt (line 4)) (0.23.4)
+Requirement already satisfied: certifi>=2017.4.17 in /pbs/throng/lsst/software/desc/anaconda3/lib/python3.7/site-packages (from requests->-r requirements.txt (line 7)) (2019.6.16)
+Requirement already satisfied: idna<2.9,>=2.5 in /pbs/throng/lsst/software/desc/anaconda3/lib/python3.7/site-packages (from requests->-r requirements.txt (line 7)) (2.8)
+Requirement already satisfied: urllib3<1.25,>=1.21.1 in /pbs/throng/lsst/software/desc/anaconda3/lib/python3.7/site-packages (from requests->-r requirements.txt (line 7)) (1.24.1)
+Requirement already satisfied: chardet<3.1.0,>=3.0.2 in /pbs/throng/lsst/software/desc/anaconda3/lib/python3.7/site-packages (from requests->-r requirements.txt (line 7)) (3.0.4)
+Requirement already satisfied: six in /pbs/throng/lsst/software/desc/anaconda3/lib/python3.7/site-packages (from h5py->-r requirements.txt (line 8)) (1.12.0)
+Collecting python-utils>=2.3.0 (from progressbar2->-r requirements.txt (line 9))
+  Downloading https://files.pythonhosted.org/packages/eb/a0/19119d8b7c05be49baf6c593f11c432d571b70d805f2fe94c0585e55e4c8/python_utils-2.3.0-py2.py3-none-any.whl
+Requirement already satisfied: py>=1.5.0 in /pbs/throng/lsst/software/desc/anaconda3/lib/python3.7/site-packages (from pytest->-r requirements.txt (line 14)) (1.7.0)
+Requirement already satisfied: setuptools in /pbs/throng/lsst/software/desc/anaconda3/lib/python3.7/site-packages (from pytest->-r requirements.txt (line 14)) (40.6.3)
+Requirement already satisfied: attrs>=17.4.0 in /pbs/throng/lsst/software/desc/anaconda3/lib/python3.7/site-packages (from pytest->-r requirements.txt (line 14)) (18.2.0)
+Requirement already satisfied: more-itertools>=4.0.0 in /pbs/throng/lsst/software/desc/anaconda3/lib/python3.7/site-packages (from pytest->-r requirements.txt (line 14)) (4.3.0)
+Requirement already satisfied: atomicwrites>=1.0 in /pbs/throng/lsst/software/desc/anaconda3/lib/python3.7/site-packages (from pytest->-r requirements.txt (line 14)) (1.2.1)
+Requirement already satisfied: pluggy>=0.7 in /pbs/throng/lsst/software/desc/anaconda3/lib/python3.7/site-packages (from pytest->-r requirements.txt (line 14)) (0.8.0)
+Collecting astroquery (from extinctions->-r requirements.txt (line 15))
+  Downloading https://files.pythonhosted.org/packages/61/50/a7a08f9e54d7d9d97e69433cd88231e1ad2901811c9d1ae9ac7ccaef9396/astroquery-0.3.9.tar.gz (4.2MB)
+    100% |████████████████████████████████| 4.2MB 1.4MB/s 
+Collecting wget (from extinctions->-r requirements.txt (line 15))
+  Downloading https://files.pythonhosted.org/packages/47/6a/62e288da7bcda82b935ff0c6cfe542970f04e29c756b0e147251b2fb251f/wget-3.2.zip
+Requirement already satisfied: healpy in /pbs/throng/lsst/software/desc/anaconda3/lib/python3.7/site-packages (from extinctions->-r requirements.txt (line 15)) (1.12.8)
+Requirement already satisfied: pytz>=2011k in /pbs/throng/lsst/software/desc/anaconda3/lib/python3.7/site-packages (from pandas>=0.15.2->seaborn->-r requirements.txt (line 4)) (2018.7)
+Requirement already satisfied: keyring>=4.0 in /pbs/throng/lsst/software/desc/anaconda3/lib/python3.7/site-packages (from astroquery->extinctions->-r requirements.txt (line 15)) (17.0.0)
+Requirement already satisfied: beautifulsoup4>=4.3.2 in /pbs/throng/lsst/software/desc/anaconda3/lib/python3.7/site-packages (from astroquery->extinctions->-r requirements.txt (line 15)) (4.6.3)
+Requirement already satisfied: html5lib>=0.999 in /pbs/throng/lsst/software/desc/anaconda3/lib/python3.7/site-packages (from astroquery->extinctions->-r requirements.txt (line 15)) (1.0.1)
+Requirement already satisfied: entrypoints in /pbs/throng/lsst/software/desc/anaconda3/lib/python3.7/site-packages (from keyring>=4.0->astroquery->extinctions->-r requirements.txt (line 15)) (0.2.3)
+Requirement already satisfied: secretstorage in /pbs/throng/lsst/software/desc/anaconda3/lib/python3.7/site-packages (from keyring>=4.0->astroquery->extinctions->-r requirements.txt (line 15)) (3.1.0)
+Requirement already satisfied: webencodings in /pbs/throng/lsst/software/desc/anaconda3/lib/python3.7/site-packages (from html5lib>=0.999->astroquery->extinctions->-r requirements.txt (line 15)) (0.5.1)
+Requirement already satisfied: jeepney in /pbs/throng/lsst/software/desc/anaconda3/lib/python3.7/site-packages (from secretstorage->keyring>=4.0->astroquery->extinctions->-r requirements.txt (line 15)) (0.4)
+Requirement already satisfied: cryptography in /pbs/throng/lsst/software/desc/anaconda3/lib/python3.7/site-packages (from secretstorage->keyring>=4.0->astroquery->extinctions->-r requirements.txt (line 15)) (2.7)
+Requirement already satisfied: asn1crypto>=0.21.0 in /pbs/throng/lsst/software/desc/anaconda3/lib/python3.7/site-packages (from cryptography->secretstorage->keyring>=4.0->astroquery->extinctions->-r requirements.txt (line 15)) (0.24.0)
+Requirement already satisfied: cffi!=1.11.3,>=1.8 in /pbs/throng/lsst/software/desc/anaconda3/lib/python3.7/site-packages (from cryptography->secretstorage->keyring>=4.0->astroquery->extinctions->-r requirements.txt (line 15)) (1.11.5)
+Requirement already satisfied: pycparser in /pbs/throng/lsst/software/desc/anaconda3/lib/python3.7/site-packages (from cffi!=1.11.3,>=1.8->cryptography->secretstorage->keyring>=4.0->astroquery->extinctions->-r requirements.txt (line 15)) (2.19)
+Building wheels for collected packages: termcolor, fitsio, pymc, extinctions, astroquery, wget
+  Running setup.py bdist_wheel for termcolor ... done
+  Stored in directory: /pbs/home/m/mricci/.cache/pip/wheels/7c/06/54/bc84598ba1daf8f970247f550b175aaaee85f68b4b0c5ab2c6
+  Running setup.py bdist_wheel for fitsio ... done
+  Stored in directory: /pbs/home/m/mricci/.cache/pip/wheels/7d/23/2f/53e62dabda9ef78b0204a10a095e9dd89837e08a0f5c2865c6
+  Running setup.py bdist_wheel for pymc ... done
+  Stored in directory: /pbs/home/m/mricci/.cache/pip/wheels/e4/6d/cf/3c408a39cf0f43e3b8abcace9758575f29c6aa860e17e9222d
+  Running setup.py bdist_wheel for extinctions ... done
+  Stored in directory: /pbs/home/m/mricci/.cache/pip/wheels/64/34/dd/5f3615d4b7f22f5e7a17fcae9f3f00d68b976bc5cb17020692
+  Running setup.py bdist_wheel for astroquery ... done
+  Stored in directory: /pbs/home/m/mricci/.cache/pip/wheels/8a/d1/1e/4124d9ef35e2bbfbaa284c97dd49d9babbab42d966c4bea190
+  Running setup.py bdist_wheel for wget ... done
+  Stored in directory: /pbs/home/m/mricci/.cache/pip/wheels/40/15/30/7d8f7cea2902b4db79e3fea550d7d7b85ecb27ef992b618f3f
+Successfully built termcolor fitsio pymc extinctions astroquery wget
+Installing collected packages: python-utils, progressbar2, termcolor, fitsio, pymc, astroquery, wget, extinctions
+Successfully installed astroquery-0.3.9 extinctions-0.1.11 fitsio-1.0.5 progressbar2-3.43.1 pymc-2.3.6 python-utils-2.3.0 termcolor-1.1.0 wget-3.2
