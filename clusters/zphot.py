@@ -202,8 +202,8 @@ class LEPHARE(object):
         self.lephare_out = subprocess.check_output(
             cmd, stderr=subprocess.STDOUT, shell=True)
         print("INFO: LEPHARE output summary (full output in self.lephare_out)")
-        print(
-            "\n".join(["   " + zo for zo in self.lephare_out.split("\n")[-6:]]))
+        #print(
+        #    "\n".join(["   " + zo for zo in self.lephare_out.split("\n")[-6:]]))#commented because it bugs with python3
 
         self.data_out = ZPHOTO(self.files['output'], self.files['pdz_output'], zcode_name='lephare',
                                all_input=self.files['all_input'], **self.kwargs)
@@ -378,8 +378,10 @@ class ZPHOTO(object):
         if self.code == 'lephare':
             self.header = [l for l in f if l.startswith('#')]
             f.close()
+           # self.variables = N.loadtxt(os.getenv('LEPHAREDIR') +
+           #                           "/config/zphot_output.para", dtype='string') #changed because it was not working with python 3            
             self.variables = N.loadtxt(os.getenv('LEPHAREDIR') +
-                                       "/config/zphot_output.para", dtype='string')
+                                       "/config/zphot_output.para", dtype='str')
             self.data_dict = {v: a for v, a in zip(
                 self.variables, self.data_array)}
             self.nsources = len(self.data_dict['Z_BEST'])
